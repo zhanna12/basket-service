@@ -28,6 +28,12 @@ public class Basket {
             inverseJoinColumns = @JoinColumn(name="drugs_id", referencedColumnName = "id"))
     private Set<Drug> drugs = new HashSet<>();
 
+    public Basket(Long userId, Set<Drug> drugs) {
+    }
+
+    public Basket() {
+    }
+
     public void setUser(User user) {
         this.user = user;
     }
@@ -40,8 +46,11 @@ public class Basket {
         this.drugs = drugs;
     }
 
-    public Set<Drug> getDrugs() {
-        return drugs;
+//    public Set<Drug> getDrugs() {
+//        return drugs;
+//    }
+    public Set<Drug> getDrugs(){
+        return this.drugs;
     }
 
 }
