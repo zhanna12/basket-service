@@ -15,4 +15,5 @@ public interface BasketService {
     public Basket deleteBasket(Long basketId);
     void addDrug(Drug drug);
     void removeDrug(Drug drug);
+    BigDecimal getTotal();
 }

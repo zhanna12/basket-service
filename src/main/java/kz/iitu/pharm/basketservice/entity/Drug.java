@@ -27,10 +27,11 @@ public class Drug {
     @ManyToMany(mappedBy = "drugs", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private Set<Basket> basket;
 
-    public Drug(Long id, String name, String name1, BigDecimal price) {
+    public Drug() {
+
     }
 
-    public Drug() {
+    public Drug(Long id, String name, BigDecimal price) {
 
     }
 
