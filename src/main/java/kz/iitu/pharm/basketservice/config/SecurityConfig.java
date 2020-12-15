@@ -54,6 +54,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterAfter(new JwtTokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth)
+            throws Exception
+    {
+        auth.inMemoryAuthentication()
+                .withUser("rest-client")
+                .password("{noop}p@ssword")
+                .roles("REST_CLIENT");
+    }
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
